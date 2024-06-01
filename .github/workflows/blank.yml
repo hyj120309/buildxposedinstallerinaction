@@ -28,11 +28,7 @@ jobs:
     - name: mkdir
       run: mkdir out
     - name: set up JDK 9
-      uses: actions/setup-java@v3
-      with:
-        java-version: '9'
-        distribution: 'temurin'
-        cache: gradle
+      run: sudo apt install openjdk-9-jdk
     - name: Build with Gradle
       run: |
           ./gradlew :app:assembleDebug
