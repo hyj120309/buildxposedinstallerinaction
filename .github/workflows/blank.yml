@@ -37,7 +37,7 @@ jobs:
           ./gradlew :app:assembleDebug
           ls app/build/outputs/apk/
           ls app/build/outputs/apk/debug/
-      # mv app/build/outputs/apk/debug/app-debug.apk out/app-debug.apk
+          mv app/build/outputs/apk/debug/*-debug.apk out/app-debug.apk
     - name: Upload APK(debug)
       uses: actions/upload-artifact@v3
       with:
