@@ -28,7 +28,10 @@ jobs:
     - name: mkdir
       run: mkdir out
     - name: set up JDK 9
-      run: sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update && sudo apt-get install oracle-java9-installer && sudo apt-get install oracle-java9-set-default
+      uses: actions/setup-java@v3
+      with:
+        java-version: '9'
+        distribution: 'temurin'
     - name: Build with Gradle
       run: |
           ./gradlew :app:assembleDebug
